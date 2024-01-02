@@ -1,0 +1,17 @@
+version: "3.8"
+services:
+  fastapi:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8000:80"
+    # depends_on:
+    #   - ngrok
+    command: ["uvicorn", "main:app", "--host", "0.0.0.0"]
+
+  # ngrok:
+  #   image: wernight/ngrok
+  #   ports:
+  #     - "4040:4040"
+  #   command: ["sh", "-c", "ngrok http fastapi:80"]

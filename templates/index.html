@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>File Upload</title>
+    <!-- <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}"> -->
+  </head>
+  <body>
+    <!-- <div class="container m-o px-10">
+        <h1>Upload a File</h1>
+        <form id="upload-form" enctype="multipart/form-data">
+            <input type="file" name="file" >
+            <button type="submit">Upload</button>
+        </form>
+        <div class="progress">
+            <div class="progress-bar" id="progress-bar" style="width: 0;"></div>
+        </div>
+        <div id="message"></div>
+    </div> -->
+
+    <div class="bg-gray-100 h-screen flex items-center justify-center p-3">
+      <div class="w-full max-w-md p-9 bg-white rounded-lg shadow-lg">
+        <h1
+          class="text-center text-2xl sm:text-2xl font-semibold mb-4 text-gray-800"
+        >
+          File Drop and Upload
+        </h1>
+        <div
+          class="bg-gray-100 p-8 text-center rounded-lg border-dashed border-2 border-gray-300 hover:border-blue-500 transition duration-300 ease-in-out transform hover:scale-105 hover:shadow-md"
+          id="dropzone"
+        >
+          <label
+            for="message"
+            class="cursor-pointer flex flex-col items-center space-y-2"
+          >
+            <svg
+              class="w-16 h-16 text-gray-400"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M12 6v6m0 0v6m0-6h6m-6 0H6"
+              ></path>
+            </svg>
+            <span class="text-gray-600">Drag and drop your files here</span>
+            <span class="text-gray-500 text-sm">(or click to select)</span>
+          </label>
+          <!-- <input type="file" id="fileInput" class="hidden" multiple> -->
+          <input type="file" name="file" id="message" class="hidden" />
+        </div>
+        <div
+        id="upload-button"
+          class="w-full h-10 bg-transparent border-2 border-double border-blue-700 rounded text-center mt-5 cursor-pointer transition duration-300 ease-in-out transform hover:scale-105 hover:shadow-md hover:bg-blue-50"
+        >
+          <div
+          id="progress-bar"
+            class="w-[0%] h-10 bg-blue-500 rounded text-white text-lg text-center"
+          ></div>
+          <p class="relative -mt-8" id="upload-percentage-text">Upload</p>
+        </div>
+        <div class="mt-6 text-center" id="fileList"></div>
+      </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='file-uploader.js') }}"></script>
+    <script src="{{ url_for('static', filename='upload.js') }}"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </body>
+</html>
